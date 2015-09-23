@@ -80,6 +80,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
+MEDIA_URL = "media/"
+STATIC_ROOT = os.path.join(ENV_PATH, 'static/')
+STATIC_URL = "static/"
+
 
 
 # Internationalization
