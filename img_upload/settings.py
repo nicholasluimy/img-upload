@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'img_upload.imgUpload'
+    'img_upload.imgUpload',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,7 +97,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'SINGAPORE/ASIA'
+TIME_ZONE = 'Asia/Singapore'
 
 USE_I18N = True
 
