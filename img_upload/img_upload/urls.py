@@ -17,6 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+]
+
 # url routing currently only for debug env
 if settings.DEBUG:
     urlpatterns += patterns('',
@@ -29,6 +33,4 @@ if settings.DEBUG:
 )
 
 
-urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-]
+
