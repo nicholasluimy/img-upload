@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^imgUpload/',include('img_upload.imgUpload.urls')),
     url(r'^$', RedirectView.as_view(url='/imgUpload/list/', permanent=True)),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

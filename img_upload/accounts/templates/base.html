@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <img src="{% static "images/sitelogo.png" %}" alt="Logo" />
+
+    {% if user.is_authenticated %}
+    <p>
+    Welcome, {{ user.username }}
+    <a href="{% url 'accounts:password_change' %}">[Change Password]</a>
+    <a href="{% url 'accounts:logout' %}">[logout]</a>
+    </p>
+{% else %}
+    <p>Welcome, Guest <a href="{% url 'accounts:login' %}">[login]</a></p>
+{% endif %}
+
+
+    {% block content %}{% endblock %}
+</body>
+</html>
