@@ -7,7 +7,15 @@
 
 	<body>
 		<!-- List of uploaded documents -->
-		{% if documents %}
+
+        {% if user.is_authenticated %}
+    <p>
+    Welcome, {{ user.username }}
+    <a href="{% url 'accounts:password_change' %}">[Change Password]</a>
+    <a href="{% url 'accounts:logout' %}">[logout]</a>
+    </p>
+
+            {% if documents %}
 			<ul>
 			{% for document in documents %}
 				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
@@ -28,6 +36,24 @@
 			</p>
 			<p><input type="submit" value="Upload" /></p>
 		</form>
+
+
+
+
+
+
+{% else %}
+    <p>Welcome, Guest <a href="{% url 'accounts:login' %}">[login]</a></p>
+
+            <br><br>
+
+            Please Login to access the img-upload system.
+{% endif %}
+
+
+
+
+
 		
 	</body>
 
